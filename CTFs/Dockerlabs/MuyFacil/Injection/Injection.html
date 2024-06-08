@@ -40,7 +40,7 @@
 <body>
     <header>
         <h1>Este CTF de la categoría Muy Fácil es una buena forma de poner en práctica los conocimientos adquiridos sobre la inyección de código. </h1>
-        <img src="/imagenes/Injection/injection.jpg" alt="InjectionLogo">
+        <img src="injection.jpg" alt="InjectionLogo">
     </header>
     <main>
         <h2>CTF Injection - Paso a paso</h2>
@@ -60,26 +60,26 @@
         <p>-t: el número de hilos utilizados (contra más hilos már carga y más riesgo de tirar la web)</p>
         <p>-x: para especificar los formatos que tiene que buscar. </p>
         <p>Tras un breve perido del tiempo obtenemos los resultados. Destaca entre todos el index.php, por lo que vemos que podemos obtener con el.</p>
-        <img src="/imagenes/Injection/injection2.png" alt="dirbuster">
+        <img src="injection2.png" alt="dirbuster">
         <p>Utilizamos el navegador y vamos al index.php. Encontramos una ventana de login donde se nos pide un usuario y una contraseña</p>
-        <img src="/imagenes/Injection/injection3.png" alt="login">   
+        <img src="injection3.png" alt="login">   
         <p>Como el CTF trata de eso, vamos a probar una inyección de código sencilla. La introducimos en el cuadro de usuario. En contraseña da igual lo que pongamos. Una vez hecho, le damos login.</p>
-        <img src="/imagenes/Injection/injection4.png" alt="inyeccion">
+        <img src="injection4.png" alt="inyeccion">
         <p>Nos aparece una ventana dando la bienvenida el usuario Dylan y su contraseña.</p>
-        <img src="/imagenes/Injection/injection5.png" alt="inyeccionfunciona">
+        <img src="injection5.png" alt="inyeccionfunciona">
         <p>Una vez obtenido el usuario y la contraseña, podemos probar a conectarnos vía SSH a la máquina víctima.</p>
         <p>Introducimos en comando ssh usuario@IP. Nos pide la contraseña de Dylan y entramos.</p>
-        <img src="/imagenes/Injection/injection6.png" alt="ssh">
+        <img src="injection6.png" alt="ssh">
         <p>Una vez dentro, el siguiente paso será elevar privilegios. Para ello probamos a lanzar sudo -l, pero no funciona.</p>
         <p>Otra forma de elevar privilegios es mediantes SUID, por lo que lanzamos el comando.</p>
         <p>find / -perm -4000 -user root 2>/de/nul</p>
         <p>Este comando de shell busca archivos con el bit setuid activado y propiedad del usuario root en todo el sistema de archivos (/). El resultado se envía al archivo /dev/null para evitar que los mensajes de error (stderr) se muestren en la salida estándar.</p>
         <p>Podemos observar como el binario env se encuentra entre estos, por lo que lo utilizaremos para elevar privilegios.</p>
-        <img src="/imagenes/Injection/injection7.png" alt="elevarpermisos">
+        <img src="injection7.png" alt="elevarpermisos">
         <p>Nos movemos hasta la carpeta donde se encuentra el binario env y desde ahí introduciremos el comando que aparece para este en la página GTFOBins.</p>
-        <img src="/imagenes/Injection/injection8.png" alt="env">
+        <img src="injection8.png" alt="env">
         <p>Finalmente, lanzamos el comando whoami para ver que usuario somos y, como podemos observar, somos el usuario root. La elevación de privilegios ha funcionado.</p>
-        <img src="/imagenes/Injection/injection9.png" alt="root">
+        <img src="injection9.png" alt="root">
         <p>Hemos terminado la máquina</p>    
 
     </main>
