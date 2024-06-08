@@ -52,7 +52,7 @@
         <p>Detección de scripts (Script scanning): Ejecuta una serie de scripts de detección adicionales para obtener más información sobre los servicios encontrados.</p>
         <p>Traceroute y técnicas de trazado de ruta: Utiliza técnicas de trazado de ruta para determinar la ruta que toman los paquetes desde tu sistema hasta el objetivo</p>
         <p>Detección de firewall/IDS: Intenta detectar la presencia de firewalls o sistemas de detección de intrusiones (IDS) en la red.</p>
-        <img src="imagenes/Injection/injection1.png" alt="nmap">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection1.png" alt="nmap">
         <p>Una vez obtenidos los resultados, vemos como en el puerto 80 tenemos un Apache 2.4.52. Este será nuestro primer objetivo.</p>
         <p>Con el Apache como objetivo, vamos a utilizar la herramienta gobuster. Esta herramienta de fuerza bruta explora servidores web en busca de directorios y archivos ocultos mediante la prueba de nomvres de archivos y directorios comunes. De esta forma podemos identificar posibles puntos de entrada y vulnerabilidades en la aplicación web.</p>
         <p>Los parámetro son los siguientes:</p>
@@ -61,26 +61,26 @@
         <p>-t: el número de hilos utilizados (contra más hilos már carga y más riesgo de tirar la web)</p>
         <p>-x: para especificar los formatos que tiene que buscar. </p>
         <p>Tras un breve perido del tiempo obtenemos los resultados. Destaca entre todos el index.php, por lo que vemos que podemos obtener con el.</p>
-        <img src="imagenes/Injection/injection2.PNG" alt="dirbuster">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection2.PNG" alt="dirbuster">
         <p>Utilizamos el navegador y vamos al index.php. Encontramos una ventana de login donde se nos pide un usuario y una contraseña</p>
-        <img src="imagenes/Injection/injection3.PNG" alt="login">   
+        <img src="https://xkozel.github.io/imagenes/Injection/injection3.PNG" alt="login">   
         <p>Como el CTF trata de eso, vamos a probar una inyección de código sencilla. La introducimos en el cuadro de usuario. En contraseña da igual lo que pongamos. Una vez hecho, le damos login.</p>
-        <img src="imagenes/Injection/injection4.PNG" alt="inyeccion">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection4.PNG" alt="inyeccion">
         <p>Nos aparece una ventana dando la bienvenida el usuario Dylan y su contraseña.</p>
-        <img src="imagenes/Injection/injection5.PNG" alt="inyeccionfunciona">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection5.PNG" alt="inyeccionfunciona">
         <p>Una vez obtenido el usuario y la contraseña, podemos probar a conectarnos vía SSH a la máquina víctima.</p>
         <p>Introducimos en comando ssh usuario@IP. Nos pide la contraseña de Dylan y entramos.</p>
-        <img src="imagenes/Injection/injection6.PNG" alt="ssh">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection6.PNG" alt="ssh">
         <p>Una vez dentro, el siguiente paso será elevar privilegios. Para ello probamos a lanzar sudo -l, pero no funciona.</p>
         <p>Otra forma de elevar privilegios es mediantes SUID, por lo que lanzamos el comando.</p>
         <p>find / -perm -4000 -user root 2>/de/nul</p>
         <p>Este comando de shell busca archivos con el bit setuid activado y propiedad del usuario root en todo el sistema de archivos (/). El resultado se envía al archivo /dev/null para evitar que los mensajes de error (stderr) se muestren en la salida estándar.</p>
         <p>Podemos observar como el binario env se encuentra entre estos, por lo que lo utilizaremos para elevar privilegios.</p>
-        <img src="imagenes/Injection/injection7.PNG" alt="elevarpermisos">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection7.PNG" alt="elevarpermisos">
         <p>Nos movemos hasta la carpeta donde se encuentra el binario env y desde ahí introduciremos el comando que aparece para este en la página GTFOBins.</p>
-        <img src="imagenes/Injection/injection8.PNG" alt="env">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection8.PNG" alt="env">
         <p>Finalmente, lanzamos el comando whoami para ver que usuario somos y, como podemos observar, somos el usuario root. La elevación de privilegios ha funcionado.</p>
-        <img src="imagenes/Injection/injection9.PNG" alt="root">
+        <img src="https://xkozel.github.io/imagenes/Injection/injection9.PNG" alt="root">
         <p>Hemos terminado la máquina</p>    
 
     </main>
