@@ -66,6 +66,18 @@
         footer .social a:hover {
             color: #ddd;
         }
+        .ctf-list {
+            margin-top: 2rem;
+        }
+        .ctf-list a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            margin: 0.5rem 0;
+        }
+        .ctf-list a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -76,14 +88,21 @@
     <nav>
         <a href="#">Inicio</a>
         <a href="#">Sobre mí</a>
-        <a href="#">Servicios</a>
+        <a href="#ctfs">CTFs</a> <!-- Cambiado Servicios por CTFs -->
         <a href="#">Contacto</a>
     </nav>
     <main>
         <h2>Sobre mí</h2>
         <p>Graduado en Ciencias Políticas y Gestión Pública en la Universidad del País Vasco. La tecnología siempre me ha atraido, comencé en el mundo de la programación de forma autodidacta. Descrubrí la Ciberseugridad y, a día de hoy, tengo claro que es a lo que me quiero dedicar. Graduado en Ciberseguridad en The Bridge | Digital Talent Accelerator.</p>
-        <h2>Servicios</h2>
-        <p>Estos son los servicios que ofrezco.</p>
+        
+        <h2 id="ctfs">CTFs Realizados</h2> <!-- Sección de CTFs -->
+        <div class="ctf-list">
+            <a href="ctf1.html">CTF 1: Descripción del CTF 1</a>
+            <a href="ctf2.html">CTF 2: Descripción del CTF 2</a>
+            <a href="ctf3.html">CTF 3: Descripción del CTF 3</a>
+            <!-- Añade más enlaces a los CTFs que has realizado -->
+        </div>
+        
         <h2>Contacto</h2>
         <p>Puedes contactarme a través de mi correo electrónico: ejemplo@correo.com</p>
     </main>
