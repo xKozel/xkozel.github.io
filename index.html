@@ -72,6 +72,17 @@
         footer .social a:hover {
             color: #ddd;
         }
+        .section {
+            margin-top: 2rem;
+        }
+        .category {
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+        .subcategory {
+            margin-top: 1rem;
+            padding-left: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -82,8 +93,8 @@
     <nav>
         <a href="#">Inicio</a>
         <a href="#ctfs">CTFs</a>
-        <a href="#">Guías</a>
-        <a href="#">Proyectos</a>
+        <a href="#guides">Guías</a>
+        <a href="#projects">Proyectos</a>
         <a href="#">Sobre mí</a>
         <a href="#">Contacto</a>
     </nav>
@@ -126,25 +137,18 @@
                 <!-- Añade más CTFs aquí -->
             </div>
         </div>
-         <h2>Guías</h2> <!-- Sección de Guías -->
-        <div class="Guías">
-            <div class="subcategory">
-            <h3>Netcat</h3>
-                <a href="Guias/netcat.html">Netcat</a>
-                </div>
-        <p>blablabla</p>
-         <h2>Proyectos</h2>
-        <p>blebleble</p>
-        <h2>Contacto</h2>
-        <p>Puedes contactarme a través de mi correo electrónico: ejemplo@correo.com</p>
-    </main>
-    <footer>
-        <div class="social">
-            <a href="www.linkedin.com/in/landergordonrincon/">LinkedIn</a>
-            <a href="https://github.com/xKozel">GitHub</a>
-            <a href="https://www.instagram.com/landergordon_">Instagram</a>
-        </div>
-        &copy; 2024 xKozel. Todos los derechos reservados.
-    </footer>
-</body>
-</html>
+        <h2 id="guides">Guías</h2> <!-- Sección de Guías -->
+        <div class="section">
+            <div class="guide-list">
+                <h3>Programación</h3>
+                <div class="category">
+                    <h4>Principiante</h4>
+                    <div class="subcategory">
+                        <a href="Guias/Programacion/Principiante/guia1.html">Guía 1: Introducción a la programación</a>
+                        <a href="Guias/Programacion/Principiante/guia2.html">Guía 2: Estructuras de datos</a>
+                        <!-- Añade más guías aquí -->
+                    </div>
+                    <h4>Avanzado</h4>
+                    <div class="subcategory">
+                        <a href="Guias/Programacion/Avanzado/guia1.html">Guía 1: Patrones de diseño</a>
+                        <a href="Guias/Programacion/Avanzado/guia2.html">Guía 2: Programación concurrente</
