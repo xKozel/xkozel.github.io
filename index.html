@@ -46,6 +46,9 @@
         h2 {
             color: #333;
         }
+        h3 {
+            color: #444;
+        }
         footer {
             background-color: #333;
             color: white;
@@ -78,6 +81,14 @@
         .ctf-list a:hover {
             text-decoration: underline;
         }
+        .category {
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+        .subcategory {
+            margin-top: 1rem;
+            padding-left: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -88,19 +99,48 @@
     <nav>
         <a href="#">Inicio</a>
         <a href="#">Sobre mí</a>
-        <a href="#ctfs">CTFs</a> <!-- Cambiado Servicios por CTFs -->
+        <a href="#ctfs">CTFs</a>
         <a href="#">Contacto</a>
     </nav>
     <main>
         <h2>Sobre mí</h2>
-        <p>Graduado en Ciencias Políticas y Gestión Pública en la Universidad del País Vasco. La tecnología siempre me ha atraido, comencé en el mundo de la programación de forma autodidacta. Descrubrí la Ciberseugridad y, a día de hoy, tengo claro que es a lo que me quiero dedicar. Graduado en Ciberseguridad en The Bridge | Digital Talent Accelerator.</p>
+        <p>Graduado en Ciencias Políticas y Gestión Pública en la Universidad del País Vasco. La tecnología siempre me ha atraido, comencé en el mundo de la programación de forma autodidacta. Descrubrí la Ciberseguridad y, a día de hoy, tengo claro que es a lo que me quiero dedicar. Graduado en Ciberseguridad en The Bridge | Digital Talent Accelerator.</p>
         
         <h2 id="ctfs">CTFs Realizados</h2> <!-- Sección de CTFs -->
         <div class="ctf-list">
-            <a href="ctf1.html">CTF 1: Descripción del CTF 1</a>
-            <a href="ctf2.html">CTF 2: Descripción del CTF 2</a>
-            <a href="ctf3.html">CTF 3: Descripción del CTF 3</a>
-            <!-- Añade más enlaces a los CTFs que has realizado -->
+            <h3>Dockerlabs</h3>
+            <div class="category">
+                <h4>Muy Fácil</h4>
+                <div class="subcategory">
+                    <a href="dockerlabs_muyfacil_ctf1.html">CTF 1: Descripción del CTF 1</a>
+                    <a href="dockerlabs_muyfacil_ctf2.html">CTF 2: Descripción del CTF 2</a>
+                    <!-- Añade más CTFs aquí -->
+                </div>
+                <h4>Fácil</h4>
+                <div class="subcategory">
+                    <a href="dockerlabs_facil_ctf1.html">CTF 1: Descripción del CTF 1</a>
+                    <a href="dockerlabs_facil_ctf2.html">CTF 2: Descripción del CTF 2</a>
+                    <!-- Añade más CTFs aquí -->
+                </div>
+                <h4>Medio</h4>
+                <div class="subcategory">
+                    <a href="dockerlabs_medio_ctf1.html">CTF 1: Descripción del CTF 1</a>
+                    <a href="dockerlabs_medio_ctf2.html">CTF 2: Descripción del CTF 2</a>
+                    <!-- Añade más CTFs aquí -->
+                </div>
+                <h4>Difícil</h4>
+                <div class="subcategory">
+                    <a href="dockerlabs_dificil_ctf1.html">CTF 1: Descripción del CTF 1</a>
+                    <a href="dockerlabs_dificil_ctf2.html">CTF 2: Descripción del CTF 2</a>
+                    <!-- Añade más CTFs aquí -->
+                </div>
+            </div>
+            <h3>TryHackMe</h3>
+            <div class="category">
+                <a href="tryhackme_ctf1.html">CTF 1: Descripción del CTF 1</a>
+                <a href="tryhackme_ctf2.html">CTF 2: Descripción del CTF 2</a>
+                <!-- Añade más CTFs aquí -->
+            </div>
         </div>
         
         <h2>Contacto</h2>
