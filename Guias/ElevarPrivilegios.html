@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevar Privilegios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        main {
+            padding: 2rem;
+        }
+        h1, {
+            color: #fff;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Elevar Privilegios</h1>
+        <img src="https://xkozel.github.io/Guias/elevarpriv.png" alt="Logopriv" style="max-width: 100px; height: auto;">
+    </header>
+    <main>
+<h1>Elevar Privilegios</h1>
+<h2>El objetivo es ir cambiando entre los distintos usuarios de la máquina víctima para poder ir obteniendo más privilegios hasta llegar a ser root/NT Authority. El método varía dependiendo del sistema operativo.</h2>
+<h3>Ejemplos:</h3>
+<p>Linux:</p>
+<p>Podemos mirar los comandos que el usuario puede ejecutar como sudo sin necesidad de ingresar contraseña con sudo -l o los binarios con permisos SUID con find / -perm -u=s -type f 2(simbolo mayor)/dev/null.</p>
+<p>En caso de encontrar alguno, sería tan fácil como entrar en GTFOBins y seguir los pasos uno a uno del binario en cuestión.</p>
+<p>Windows:
+<p>El primer paso es obtener una sesión de Meterpreter.</p>
+<p>Con la sesión Meterpreter obtenida, el método más sencillo es buscar el módulo Suggester en Metasploit, ingresar la sesión como parámetro y ejecutar el exploit.</p>
+<p>Este, a su vez, nos dará una serie de exploits que tendremos que ir ejecutando uno a uno hasta que funcione y hayamos entrado en el grupo de Administradores.</p>
+<p>Siendo parte del grupo de Administradores, tan solo tendremos que lanzar getsystem para convertir el usuario de la sesión en NT Authority System. </p>
+/p>
+<p> </p>
+ </main>
+    <footer>
+        &copy; 2024 xKozel. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
