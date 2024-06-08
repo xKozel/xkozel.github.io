@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Dockerlabs - Break My SSH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        main {
+            padding: 2rem;
+        }
+        h1, {
+            color: #fff;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CTF - Break My SSH</h1>
+        <img src="https://xkozel.github.io/imagenes/BreakMySSH/ssh.jpg" alt="InjectionLogo" style="max-width: 100px; height: auto;">
+    </header>
+    <main>
+        <h2>CTF Break My SSH - Paso a paso</h2>
+        <p>En primer lugar, una vez iniciada la máquina virtual, lanzamos un nmap con el parámetro -A para ver los puertos y servicios que están corriendo en ella. </p>
+        <p>El parámetro -A en el comando nmap es una opción que habilita un conjunto de detecciones y análisis de seguridad avanzados. Al utilizar -A, estás activando un escaneo que incluye una serie de técnicas adicionales para obtener más información sobre los sistemas y redes que estás explorando. Algunas de las funcionalidades que habilita -A incluyen:</p>
+        <p>Detección de sistema operativo (OS detection): Intenta determinar el sistema operativo del objetivo analizando diversos aspectos de las respuestas a los paquetes de red.</p>
+        <p>Detección de servicios y versiones (Service version detection): Intenta determinar qué servicios están en ejecución en los puertos abiertos y, en algunos casos, incluso intenta determinar la versión del servicio.</p>
+        <p>Detección de scripts (Script scanning): Ejecuta una serie de scripts de detección adicionales para obtener más información sobre los servicios encontrados.</p>
+        <p>Traceroute y técnicas de trazado de ruta: Utiliza técnicas de trazado de ruta para determinar la ruta que toman los paquetes desde tu sistema hasta el objetivo.</p>
+        <p>Detección de firewall/IDS: Intenta detectar la presencia de firewalls o sistemas de detección de intrusiones (IDS) en la red.</p>
+        <img src="https://xkozel.github.io/imagenes/BreakMySSH/ssh1.PNG" alt="ssh1">
+        <p>Una vez obtenidos los resultados, vemos como el puerto 22 está abierto. Podemos observar como la versión es OpenSSH 7.7. La versión es vulnerable, CVE 2018-154773. Por lo que vamos a utilizar Metasploit para explotarla.</p>
+        <p>Abrimos Metasploit y buscamos un módulo que podamos utilizar para esta vulnerabilida.</p>
+        <p>Vamos a utilizar un módulo auxiliar cuya función es enumerar los usuarios.</p>
+        <p>Añadimos los parámetros necesarios para poder ejecutar el exploit, entre ellos el dicionario que utilizará.</p>
+        <p>En este caso, utilizaremos el dicionario unix_users.txt que viene default en metasploit.</p>
+        <p>Una vez todo listo, ejecutamos el exploit.</p>
+        <img src="https://xkozel.github.io/imagenes/BreakMySSH/ssh2.PNG" alt="ssh2">
+        <p>Tras un breve periodo de tiempo obtenemos una lista bastante larga de usuarios. Destaca "root" en esta lista, por lo que será nuestro objetivo.</p>
+        <img src="https://xkozel.github.io/imagenes/BreakMySSH/ssh3.PNG" alt="ssh3">   
+        <p>Con el usuario "root" conseguido, es el momento de utilizar la fuerza bruta para tratar de obtener la contraseña, para ello utilizaremos la herramienta Hydra.</p>
+        <p>Los parámetros son los siguientes:</p>
+        <p>-l: usuario</p>
+        <p>-P: diccionario que utilizaremos</p>
+        <p>dirección IP</p>
+        <p>método de conexión</p>
+        <p>-t: número de hilos</p>
+        <p>-I: eliminar el registro de la sesión anterior de Hydra</p>
+        <img src="https://xkozel.github.io/imagenes/BreakMySSH/ssh4.PNG" alt="ssh4">
+        <p>Conseguimos la contraseña del usuario "root", es "estrella".</p>
+        <img src="https://xkozel.github.io/imagenes/BreakMySSH/ssh5.PNG" alt="ssh5">
+        <p>Una vez obtenido el usuario y la contraseña, podemos probar a conectarnos vía SSH a la máquina víctima.</p>
+        <p>La conexión funciona y entramos en la máquina víctima.</p>
+        <p>Lanzamos un whoami y comprobamos que, efectivamente, somos usuario "root" y contamos con todos los privilegios.</p>
+        <img src="https://xkozel.github.io/imagenes/BreakMySSH/ssh5.PNG" alt="ssh">
+        
+        <p>Hemos finalizado el CTF - BreakMySSH</p>   
+        <p></p>    
+        <p></p>    
+
+
+
+    </main>
+    <footer>
+        &copy; 2024 xKozel. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
