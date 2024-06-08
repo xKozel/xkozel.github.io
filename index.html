@@ -83,11 +83,23 @@
             margin-top: 1rem;
             padding-left: 2rem;
         }
+        .contact-social {
+            margin-top: 1rem;
+        }
+        .contact-social a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: #444;
+            text-decoration: none;
+        }
+        .contact-social a:hover {
+            color: #000;
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="new.png" alt="Logotipo">
+        <img src="logo.jpg" alt="Logotipo">
         <h1>KM Cybersurity Collective</h1>
     </header>
     <nav>
@@ -192,15 +204,36 @@
             </div>
         </div>
 
-        <div class="contact">
-            <a href="www.linkedin.com/in/landergordonrincon">LinkedIn</a>
-            <a href="https://github.com/xKozel">GitHub</a>
-            <a href="https://www.instagram.com/landergordon_">Instagram</a>
+        <h2 id="contact">Contacto</h2>
+        <div class="section">
+            <p>Puedes contactarme a través de mi correo electrónico: ejemplo@correo.com</p>
+            <form action="enviar_mensaje.php" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contact-social">
+                <h3>Sígueme en mis redes sociales:</h3>
+                <a href="https://www.linkedin.com/in/landergordonrincon/">LinkedIn</a>
+                <a href="https://github.com/xKozel">GitHub</a>
+                <a href="https://www.instagram.com/landergordon_">Instagram</a>
+            </div>
         </div>
     </main>
     <footer>
-        &copy; 2024 xKozel. Todos los derechos reservados.
+        <div class="social">
+            <a href="https://www.linkedin.com/in/landergordonrincon/">LinkedIn</a>
+            <a href="https://github.com/xKozel">GitHub</a>
+            <a href="https://www.instagram.com/landergordon_">Instagram</a>
+        </div>
+        &copy; 2024 KM Cybersurity Collective
     </footer>
 </body>
 </html>
-
