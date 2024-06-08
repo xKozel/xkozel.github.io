@@ -31,14 +31,17 @@
             padding: 0.5rem 0;
         }
         nav a {
+            display: inline-block;
             margin: 0 1rem;
             color: white;
             text-decoration: none;
             padding: 0.5rem 1rem;
+            border: 2px solid #444;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         nav a:hover {
             background-color: #555;
-            border-radius: 5px;
         }
         main {
             padding: 2rem;
@@ -69,26 +72,6 @@
         footer .social a:hover {
             color: #ddd;
         }
-        .ctf-list {
-            margin-top: 2rem;
-        }
-        .ctf-list a {
-            display: block;
-            color: #000;
-            text-decoration: none;
-            margin: 0.5rem 0;
-        }
-        .ctf-list a:hover {
-            text-decoration: underline;
-        }
-        .category {
-            margin-top: 1rem;
-            padding-left: 1rem;
-        }
-        .subcategory {
-            margin-top: 1rem;
-            padding-left: 2rem;
-        }
     </style>
 </head>
 <body>
@@ -98,8 +81,10 @@
     </header>
     <nav>
         <a href="#">Inicio</a>
+        <a href="#">CTFs</a>
+        <a href="#ctfs">Guías</a>
+        <a href="#">Proyectos</a>
         <a href="#">Sobre mí</a>
-        <a href="#ctfs">CTFs</a>
         <a href="#">Contacto</a>
     </nav>
     <main>
