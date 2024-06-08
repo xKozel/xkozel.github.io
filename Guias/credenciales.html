@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credenciales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        main {
+            padding: 2rem;
+        }
+        h1, {
+            color: #fff;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Credenciales</h1>
+        <img src="https://xkozel.github.io/Guias/credenciales.png" alt="Logopriv" style="max-width: 100px; height: auto;">
+    </header>
+    <main>
+<h1>Credenciales</h1>
+<h2>Obtener credenciales en un ordenador es un ataque en ciberseguridad donde se busca acceder a las credenciales de usuario, como nombres de usuario y contraseñas. Esto se puede lograr mediante técnicas como el keylogging (registrar las pulsaciones del teclado), phishing (suplantación de identidad), exploiting (aprovechamiento de vulnerabilidades) o utilizando herramientas como Mimikatz para extraer credenciales almacenadas en la memoria del sistema. Es crucial implementar medidas de seguridad como autenticación multifactor, actualizaciones regulares y concienciación sobre amenazas para prevenir este tipo de ataques.</h2>
+<h3>Ejemplos:</h3>
+<p>Linux:</p>
+<p>El primer paso es obtener una sesión de Meterpreter.</p>
+<p>Con la sesión Meterpreter obtenida, podemos utilizar el módulo linux/gather/hashdump para obtener un volcado de hash añadiendo como parámetro la sesión obtenida.</p>
+<p>Después, podemos tratar de crackearlos fuera o con otro módulo auxiliar de crackeo.</p>
+<p>Windows:
+<p>El primer paso es obtener una sesión de Meterpreter.</p>
+<p>Con la sesión Meterpreter obtenida, podemos utilizar Kiwi para intentar conseguir las credenciales en un sistema Windows.</p>
+<p>Para ello, una vez tengamos una Shell Meterpreter, lanzamos load kiwi para cargar el módulo y, una vez en marcha, utilizamos creds_all para obtener los hash de las sesiones abiertas.</p>
+<p>Estos los podemos intentar crackear fuera o utilizando algún módulo de descifrado dentro de Metasploit.</p>
+<p> </p>
+ </main>
+    <footer>
+        &copy; 2024 xKozel. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
