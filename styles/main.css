@@ -15,10 +15,11 @@ header {
 header nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul li {
-    display: inline;
     margin: 0 1em;
 }
 
@@ -61,3 +62,4 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
