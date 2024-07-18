@@ -3,13 +3,28 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #333; /* Fondo gris */
+    color: #fff; /* Texto blanco */
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Fondo gris */
+    color: #fff; /* Texto blanco */
     padding: 1em;
     text-align: center;
+    position: relative;
+}
+
+.social-media {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.social-media a img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
 }
 
 header nav ul {
@@ -17,6 +32,7 @@ header nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 header nav ul li {
@@ -29,37 +45,29 @@ header nav ul li a {
 }
 
 .hero {
-    position: relative;
     text-align: center;
-    color: white;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
+    padding: 4em 0;
 }
 
 .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
     padding: 1em;
 }
 
-.about, .portfolio, .contact {
+.about, .portfolio {
     padding: 2em;
     text-align: center;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Fondo gris */
+    color: #fff; /* Texto blanco */
     text-align: center;
     padding: 1em;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
+
 
