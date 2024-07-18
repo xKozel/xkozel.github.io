@@ -2,13 +2,35 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
     background-color: #333;
     color: #fff;
+    padding: 1em;
     text-align: center;
-    padding: 1em 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
 .hero img {
@@ -16,7 +38,16 @@ header {
     height: auto;
 }
 
-.about {
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+}
+
+.about, .portfolio, .contact {
     padding: 2em;
     text-align: center;
 }
@@ -25,7 +56,7 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1em 0;
+    padding: 1em;
     position: fixed;
     width: 100%;
     bottom: 0;
